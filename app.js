@@ -1,7 +1,8 @@
 import * as cheerio from 'cheerio';
 import fetch from 'node-fetch';
 import fs from 'fs';
-async function getJEEMinfo(){
+
+export default async function getJEEMinfo(){
 
     try{
         const response=await fetch("https://jeemain.nta.nic.in/");
@@ -33,7 +34,7 @@ async function getJEEMinfo(){
         console.log(error);
     }
 }
-async function getJEEAinfo(){
+export async function getJEEAinfo(){
 
     try{
         const response=await fetch("https://jeeadv.ac.in/");
@@ -65,7 +66,7 @@ async function getJEEAinfo(){
         console.log(error);
     }
 }
-async function getNEETinfo(){
+export async function getNEETinfo(){
 
     try{
         const response=await fetch("https://neet.nta.nic.in//");
@@ -97,4 +98,3 @@ async function getNEETinfo(){
             console.log(error);
         }
 }
-getNEETinfo();
